@@ -95,10 +95,9 @@ jobs:
       id: package
       run: |
         cd openwrt
-        #make defconfig
-        make download -j$(nproc)
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        make defconfig
+        ./scripts/feeds install -a
+        make download -j8
     - name: 开始编译固件
       id: compile
       run: |
