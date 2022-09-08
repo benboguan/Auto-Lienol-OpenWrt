@@ -4,7 +4,7 @@
  			set wireless.radio${devidx}.channel=${channel}
  			set wireless.radio${devidx}.band=${mode_band}
  			set wireless.radio${devidx}.htmode=$htmode
-+			set wireless.radio${devidx}.txburst=1
++			set wireless.radio${devidx}.tx_burst=1
 +			set wireless.radio${devidx}.ldpc=1
 +			set wireless.radio${devidx}.ITxBfEn=1
 +			set wireless.radio${devidx}.noscan=1
