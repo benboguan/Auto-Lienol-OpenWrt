@@ -162,7 +162,7 @@ jobs:
         echo "status=success" >>$GITHUB_OUTPUT
 
     - name: 上传固件到release
-      uses: softprops/action-gh-release@v3
+      uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -172,13 +172,13 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: 移除旧文件
-      uses: c-hive/gha-remove-artifacts@v3.2.0
+      uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
         age: '1 day'
         skip-recent: 3
 
     - name: 移除以前的Releases
-      uses: dev-drprasad/delete-older-releases@v0.3.0
+      uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
