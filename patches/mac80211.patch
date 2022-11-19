@@ -1,6 +1,6 @@
 --- a/package/kernel/mac80211/files/lib/wifi/mac80211.sh
 +++ b/package/kernel/mac80211/files/lib/wifi/mac80211.sh
-@@ -199,14 +199,23 @@ detect_mac80211() {
+@@ -199,14 +199,22 @@ detect_mac80211() {
  			set wireless.${name}.channel=${channel}
  			set wireless.${name}.band=${mode_band}
  			set wireless.${name}.htmode=$htmode
